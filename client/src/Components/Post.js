@@ -1,8 +1,11 @@
+import { formatISO9075 } from 'date-fns';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function Post({ title, summary, content, cover, author ,createdAt, _id }) {
   console.log('Post data received:', { title, summary, content, cover, author ,_id});
+ 
 
   // Determine the file extension
   const fileExtension = cover ? cover.split('.').pop().toLowerCase() : null;
@@ -17,7 +20,7 @@ function Post({ title, summary, content, cover, author ,createdAt, _id }) {
       </Link>
         
         <p className="author">By {author?.username || 'Unknown author'}</p>
-        <time>{createdAt}</time>
+        <time>{formatISO9075(new Date(createdAt))}</time>
       </div>
       <Link to={`/post/${_id}`}>
       {cover && isImage && <img src={`http://localhost:4000/${cover}`} alt={title} className="post-image" />}
