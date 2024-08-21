@@ -8,7 +8,7 @@ import Layout from './Components/Layout.js';
 import { UserContextProvider } from './UserContext.js';
 import CreatePost from './Pages/CreatePost.js';
 import PostPage from './Pages/PostPage.js';
-import EditPost from './Pages/EditPost.js';
+
 function App() {
  
   return (
@@ -23,7 +23,6 @@ function App() {
      <Route path='/register' element={<RegisterPage/>}/>
      <Route path='/create' element = {<CreatePost/>}/>
      <Route path='/post/:id' element ={<PostPage/>}/>
-     <Route path='/edit/:id' element = {<EditPost/>}/>
      </Route>
   </Routes>
   </UserContextProvider>

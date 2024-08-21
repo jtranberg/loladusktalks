@@ -30,7 +30,7 @@ function Post({ title, summary, content, cover, author ,createdAt, _id }) {
 
       <div className="post-card-body">
         <p>{summary}</p>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
       </div>
     </div>
     </div>
