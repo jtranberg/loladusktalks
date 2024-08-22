@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa; /* Optional: Light background for the header */
+  border-bottom: 1px solid #ddd; /* Optional: Bottom border for header separation */
+  flex-wrap: nowrap; /* Prevent wrapping of flex items */
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #007bff; /* Optional: Color for the logo */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* Space between items */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  white-space: nowrap; /* Prevent wrapping */
+  width: auto; /* Allow the nav to fit its content */
+}
+
+header nav a,
+header nav button {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+header nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header nav button:hover,
+header nav a:hover {
+  color: #0056b3; /* Optional: Darker blue on hover */
+}
+
+header nav button:focus,
+header nav a:focus {
+  outline: none;
+  color: #0056b3; /* Optional: Darker blue on focus */
+}
