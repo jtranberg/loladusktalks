@@ -1,0 +1,14 @@
+[build]
+
+publish = "client/build"
+functions = "netlify/functions"
+
+[dev]
+framework = "create-react-app"
+targetPort = 3000
+
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
