@@ -15,7 +15,7 @@ const secret = 'your_jwt_secret'; // Secure this in environment variables in pro
 const salt = bcrypt.genSaltSync(10); // Define the salt for bcrypt
 
 // Middleware setup
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000', 'https://lola-dusk-talks.netlify.app'];
+const allowedOrigins = ['https://lola-dusk-talks.netlify.app'];
 
 app.use(cors({
   origin: function (origin, callback) {
