@@ -1,14 +1,13 @@
 [build]
-command = "npm run build"
-publish = "client/public/build"
+command = "npm run build --prefix client"
+publish = "client/build"  # This should point to the build directory
 functions = "netlify/functions"
 
 [dev]
 framework = "create-react-app"
 targetPort = 3000
 
-
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 200

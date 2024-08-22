@@ -15,7 +15,7 @@ const secret = 'your_jwt_secret'; // Secure this in environment variables in pro
 const salt = bcrypt.genSaltSync(10); // Define the salt for bcrypt
 
 // Middleware setup
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:4000', 'https://lola-dusk-talks.netlify.app'];
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -142,14 +142,12 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
   });
 });
 
-
-
 // Get all posts route
 app.get('/post', async (req, res) => {
   res.json(
     await Post.find()
       .populate('author', ['username'])
-      .sort({ createdAt:-1 })
+      .sort({ createdAt: -1 })
       .limit(20)
   );
 });
@@ -174,13 +172,11 @@ app.get('/user-posts', authenticateUser, async (req, res) => {
 });
 
 // single post route
-
 app.get('/post/:id', async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   const postDoc = await Post.findById(id).populate('author', ['username']);
   res.json(postDoc);
-})
-
+});
 
 // Start the server
 app.listen(4000, () => {
